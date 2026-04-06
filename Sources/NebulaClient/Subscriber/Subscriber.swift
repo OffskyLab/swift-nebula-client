@@ -2,7 +2,7 @@ import Foundation
 import NIO
 import NMTP
 
-/// A broker subscriber that receives async events pushed from `BrokerAmas` via Galaxy.
+/// A broker subscriber that receives async events pushed from `BrokerCluster` via Galaxy.
 ///
 /// Discovers the Galaxy address via Ingress (`findGalaxy`), connects directly,
 /// and joins a subscription group. Incoming events arrive via `events`.
@@ -21,7 +21,7 @@ public actor Subscriber {
     public let topic: String
     public let subscription: String
 
-    /// Server-pushed events from Galaxy's `BrokerAmas`.
+    /// Server-pushed events from Galaxy's `BrokerCluster`.
     public let events: AsyncStream<EnqueueBody>
 
     private let galaxyClient: GalaxyClient

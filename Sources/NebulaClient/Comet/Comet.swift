@@ -2,10 +2,10 @@ import Foundation
 import NIO
 import NMTP
 
-/// An async message producer that enqueues tasks into `BrokerAmas` via Ingress.
+/// An async message producer that enqueues tasks into `BrokerCluster` via Ingress.
 ///
 /// Unlike `RoguePlanet` (RPC, waits for result), `Comet` confirms the message is
-/// queued and moves on. `BrokerAmas` handles delivery, retry, and parking.
+/// queued and moves on. `BrokerCluster` handles delivery, retry, and parking.
 ///
 /// ```swift
 /// let comet = try await NebulaClient.comet(connecting: "nmtp+broker://localhost:6224/production/orders/jobs")
@@ -37,7 +37,7 @@ public actor Comet: Astral {
 
 extension Comet {
 
-    /// Enqueue a task. Returns once BrokerAmas confirms receipt ("queued").
+    /// Enqueue a task. Returns once BrokerCluster confirms receipt ("queued").
     public func enqueue(
         service: String,
         method: String,
