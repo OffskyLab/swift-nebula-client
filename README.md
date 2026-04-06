@@ -1,5 +1,8 @@
 # swift-nebula-client
 
+> [!WARNING]
+> This package is in early development. Many features are not yet implemented and the API is subject to breaking changes. Do not use in production.
+
 Swift client SDK for the [Nebula](https://github.com/gradyzhuo/swift-nebula) distributed RPC framework, built on [swift-nmtp](https://github.com/gradyzhuo/swift-nmtp).
 
 ---
